@@ -6,8 +6,10 @@ import { fetchPost } from '../actions';
 
 class PostsShow extends Component {
   componentWillMount() {
-    const { id } = this.props.match.params;
-    this.props.fetchPost(id);
+    if (!this.props.post) { // if already exists, don't re-fetch (assuming content hasn't been changed)
+      const { id } = this.props.match.params;
+      this.props.fetchPost(id);
+    }
   }
 
   render() {
