@@ -18,7 +18,7 @@ ReactDOM.render(
       <div>
         <Switch>
           <Route exact path='/posts/new' component={PostsNew} />
-          <Route path='/posts/:id' component={PostsShow} />
+          <Route exact path='/post/:id' component={PostsShow} />
           <Route exact path='/' component={PostsIndex} />
         </Switch>
       </div>
